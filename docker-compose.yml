@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: SwaDes123
+      POSTGRES_PASSWORD:  ${POSTGRES_PASSWORD:?postgres password required}
       POSTGRES_DB: postgres
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U outline"]
